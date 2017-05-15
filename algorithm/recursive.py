@@ -76,3 +76,18 @@ def isPalindrome(s):
     return isPal(toChars(s))
 
 
+# 找到列表的所有子集
+
+def genSubsets(L):
+	
+	if len(L) == 0:
+		return [[]]
+	smaller = genSubsets(L[:-1])
+	extra = L[-1:]
+	new = []
+	for small in smaller:
+		new.append(small+extra)
+	return smaller+new
+
+
+
